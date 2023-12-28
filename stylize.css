@@ -1,0 +1,239 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    /* font-family: 'Lato', sans-serif; 
+    font-family: 'Afacad', sans-serif;*/
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+:root {
+    --bc-color-blur: rgba(14, 14, 17, 0.966);
+    --bc-color: rgb(14, 14, 17);
+    --bc-color-trns: rgb(14, 14, 17);
+    --main1: rgb(241, 241, 241);
+    --main: rgb(194, 183, 199);
+}
+
+body {
+    background-color: var(--main1);
+    color: black;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    box-shadow: 0 0 13px rgba(0, 0, 0, 0.432);
+    backdrop-filter: blur(8px);
+    background-color: var(--bc-color-blur);
+    display: flex;
+    padding: 0 40px;
+    justify-content: space-between;
+    color: white;
+    overflow: hidden;
+    z-index: 5555555;
+}
+
+nav .logo {
+    width: 150px;
+    height: 40px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+nav .logo .cls-1,
+nav .logo .cls-2 {
+    transition: 0.5s;
+    stroke: #ffffff;
+    stroke-width: 0;
+}
+
+nav .logo:hover .cls-1 {
+
+    stroke: #6200ff;
+    stroke-width: 2px;
+}
+
+nav .logo:hover .cls-2 {
+
+    fill: #6200ff;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    list-style: none;
+    align-items: center;
+    position: relative;
+
+}
+
+nav ul li {
+    margin: 0 5px;
+    cursor: pointer;
+    position: relative;
+    perspective: 1000px;
+    height: 4ch;
+    transition: 0.5s;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+
+
+nav ul li span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1.3);
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    top: 50%;
+    left: 50%;
+
+}
+
+nav ul li::before {
+    content: "Love";
+    display: block;
+    text-align: center;
+    text-wrap: nowrap;
+    white-space: 20px;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    color: black;
+    z-index: 50;
+    transition: 0.5s;
+    font-weight: 700;
+    color: white;
+}
+
+nav ul li:hover::before {
+    opacity: 1;
+    top: 50%;
+}
+
+nav ul li[name="Login"]::before {
+    content: "Login";
+
+}
+
+nav ul li[name="Home"]::before {
+    content: "Home";
+
+}
+
+nav ul li[name="Store"]::before {
+    content: "Store";
+
+}
+
+nav ul li[name="New-Maps"]::before {
+    content: "New Maps";
+
+}
+
+nav ul li[name="Contact"]::before {
+    content: "Contact";
+
+}
+
+nav ul li[name="Settings"]::before {
+    content: "Settings";
+
+}
+
+nav ul li:hover span {
+    color: black;
+    top: -50%;
+
+    filter: blur(2px);
+    transform: translate(-50%, -50%) scale(0.5) perspective(1000px) rotateX(90deg);
+
+
+
+}
+
+nav ul li:hover {
+    background-color: #6200ff;
+}
+
+.padding {
+    height: 80px;
+    width: 100%;
+}
+
+.Home {
+
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 20px;
+    overflow: hidden;
+
+}
+
+.s-cont {
+    border-radius: 10px;
+    background-color: var(--bc-color);
+    color: white;
+    width: 25%;
+    height: max-content;
+    padding: 25px;
+
+    margin-bottom: 10px;
+}
+
+.welcoming-cont {
+    min-width: 25%;
+    height: calc(100% - 40px);
+    margin: 20px;
+    width: max-content;
+}
+
+
+.welcoming-cont p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 600px;
+    font-size: 20px;
+}
+
+.welcoming {
+    opacity: 1;
+    width: 100%;
+    position: relative;
+    padding: 10px 5px;
+    font-size: 30px;
+}
+
+.f1 {
+
+    font-family: sans-serif;
+    font-weight: 600;
+
+
+}
+
+.c-1 {
+    color: #6200ff;
+}
+
+.c-2 {
+    color: var(--bc-color);
+    padding: 3px 5px;
+    border-radius: 20px;
+    background-color: #6200ff;
+    margin: 5px;
+}
+
+nav ul li:hover span {}
