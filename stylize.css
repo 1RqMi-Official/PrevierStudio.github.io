@@ -27,8 +27,7 @@ nav {
     width: 100%;
     height: 80px;
     box-shadow: 0 0 13px rgba(0, 0, 0, 0.432);
-    backdrop-filter: blur(8px);
-    background-color: var(--bc-color-blur);
+    background-color: var(--bc-color);
     display: flex;
     padding: 0 40px;
     justify-content: space-between;
@@ -72,15 +71,18 @@ nav ul {
 
 }
 
+
+
 nav ul li {
     margin: 0 5px;
     cursor: pointer;
     position: relative;
     perspective: 1000px;
-    height: 4ch;
+    height: 5ch;
     transition: 0.5s;
     overflow: hidden;
-    border-radius: 10px;
+    padding: 2px 7px;
+    border-radius: 3px;
 }
 
 
@@ -157,20 +159,46 @@ nav ul li:hover span {
     color: black;
     top: -50%;
 
-    filter: blur(2px);
     transform: translate(-50%, -50%) scale(0.5) perspective(1000px) rotateX(90deg);
 
 
 
 }
 
-nav ul li:hover {
-    background-color: #6200ff;
+nav ul a:active {
+    color: white;
 }
+
+nav ul a:visited {
+    color: white;
+}
+
+nav ul li:hover {
+    background-color: #6200ff !important;
+    background-image: linear-gradient(to top, #0000006e, #29292900);
+}
+
+nav ul li.active {
+    background-image: linear-gradient(to top, #a557ff31, #a84bff00);
+    border: 1px solid #6200ff;
+}
+
+
 
 .padding {
     height: 80px;
     width: 100%;
+}
+
+
+ul:hover li {
+    opacity: 0.8;
+
+}
+
+ul:hover li:hover {
+    opacity: 1;
+
 }
 
 .Home {
@@ -194,10 +222,12 @@ nav ul li:hover {
 }
 
 .welcoming-cont {
+    position: relative;
     min-width: 25%;
-    height: calc(100% - 40px);
+    height: calc(75% - 40px);
     margin: 20px;
     width: max-content;
+    z-index: 0;
 }
 
 
@@ -206,6 +236,7 @@ nav ul li:hover {
     word-wrap: break-word;
     max-width: 600px;
     font-size: 20px;
+    z-index: 3;
 }
 
 .welcoming {
@@ -214,6 +245,7 @@ nav ul li:hover {
     position: relative;
     padding: 10px 5px;
     font-size: 30px;
+    z-index: 3;
 }
 
 .f1 {
@@ -237,3 +269,79 @@ nav ul li:hover {
 }
 
 nav ul li:hover span {}
+
+
+.scraf {
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-evenly;
+    z-index: -1;
+    transform-style: preserve-3d;
+
+}
+
+.scraf span {
+    position: relative;
+    width: 7%;
+    height: 100%;
+    background-color: #6200ff13;
+    animation: flexing 1s 2s linear infinite;
+    transition: 0.3s;
+}
+
+@keyframes flexing {
+
+    0% {
+        background-color: #6200ff00;
+        transform: rotateY(20deg);
+    }
+
+
+    100% {
+        background-color: #6200ff13;
+        transform: rotateY(0deg);
+    }
+
+}
+
+
+.btn {
+    width: 25%;
+    height: 50px;
+    border-radius: 60px;
+    background-color: #6200ff;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    transition: 0.3s;
+    position: relative;
+}
+
+.btn::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 60px;
+    background-color: #3535359d;
+    transition: 0.3s;
+    z-index: -1;
+}
+
+.btn:hover {
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.btn:hover::before {
+
+    top: -5px;
+    left: -5px;
+}
